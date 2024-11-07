@@ -5,7 +5,7 @@ import './App.css';
 const questions = [
   { id: 1, text: '¿Cuál es tu color favorito?', options: ['Rojo', 'Azul', 'Verde', 'Amarillo'] },
   { id: 2, text: '¿Cuál es tu animal favorito?', options: ['Perro', 'Gato', 'Elefante', 'León'] },
-  // Más preguntas
+  // Agrega más preguntas aquí si lo deseas
 ];
 
 const Question = ({ saveAnswer }) => {
@@ -18,7 +18,11 @@ const Question = ({ saveAnswer }) => {
     if (selectedOption !== null) {
       saveAnswer(question.id, selectedOption);
       const nextId = parseInt(id) + 1;
-      navigate(`/question/${nextId}`);
+      if (nextId > questions.length) {
+        navigate('/thank-you');
+      } else {
+        navigate(`/question/${nextId}`);
+      }
     }
   };
 

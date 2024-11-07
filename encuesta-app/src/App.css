@@ -194,3 +194,12 @@ input[type="radio"]:checked + .option-label {
   margin-top: 15px;
 }
 
+/* Pantalla de agradecimiento */
+.thank-you {
+  background-color: darkslateblue;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+

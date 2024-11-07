@@ -1,7 +1,9 @@
+// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Welcome from './Welcome';
 import Question from './Question';
+import ThankYou from './ThankYou';
 import './App.css';
 
 function App() {
@@ -23,20 +25,18 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route
-            path="/"
-            element={
-              quizStarted ? (
-                <Navigate to="/question/1" replace />
-              ) : (
-                <Welcome startQuiz={startQuiz} />
-              )
-            }
-          />
-          <Route
-            path="/question/:id"
-            element={<Question saveAnswer={saveAnswer} />}
-          />
+          {!quizStarted ? (
+            <Route path="/" element={<Welcome startQuiz={startQuiz} />} />
+          ) : (
+            <>
+              <Route path="/" element={<Navigate to="/question/1" />} />
+              <Route
+                path="/question/:id"
+                element={<Question saveAnswer={saveAnswer} />}
+              />
+              <Route path="/thank-you" element={<ThankYou />} />
+            </>
+          )}
         </Routes>
       </div>
     </Router>
