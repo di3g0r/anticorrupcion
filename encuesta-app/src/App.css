@@ -1,0 +1,196 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos globales */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Página de bienvenida */
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  transition: background-color 0.5s ease, box-shadow 0.3s ease;
+}
+
+.section-1 {
+  background-color: navy;
+}
+
+.section-2 {
+  background-color: darkslateblue;
+}
+
+.section-3 {
+  background-color: darkcyan;
+}
+
+/* Animaciones para transición */
+.welcome-title, .welcome-paragraph, .welcome-button {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.welcome-title.show, .welcome-paragraph.show, .welcome-button.show {
+  opacity: 1;
+}
+
+.arrow-down {
+  position: absolute;
+  bottom: 60px;
+  width: 30px;
+  height: 30px;
+  border-left: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(90deg);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-45deg);
+  }
+}
+
+/* Efecto de cambio de sección */
+.section-2, .section-3 {
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.4);
+}
+.show {
+  opacity: 1;
+}
+
+/* Estilos de elementos */
+.welcome-title {
+  font-size: 2.5em;
+}
+
+.welcome-paragraph {
+  font-size: 1.2em;
+  padding: 0 10%;
+}
+
+.welcome-button {
+  background-color: #ffd700;
+  color: navy;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Estilos para el Quiz */
+.quiz-container {
+  background-color: #87cefa;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-box {
+  background-color: beige;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.question-options {
+  margin-top: 10px;
+}
+
+/* Botones de opción estéticos */
+.option-label {
+  display: block;
+  padding: 8px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.option-label:hover {
+  background-color: #f0e68c;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .option-label {
+  background-color: #ffb347;
+  color: navy;
+  font-weight: bold;
+}
+
+.continue-button {
+  background-color: #ffd700;
+  color: navy;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
